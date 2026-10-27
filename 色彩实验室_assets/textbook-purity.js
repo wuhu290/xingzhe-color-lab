@@ -1,0 +1,6 @@
+window.colorTextbookScenes=[
+{id:'lesson-appreciation',name:'本课欣赏作品',src:'色彩实验室_assets/textbook-purity/appreciation.png',medium:'textbook',regions:[['黄色与赭色部分',[0,0,900,600],[450,300]]],lessonGroups:[['黄色与赭色部分',20,75]],source:'https://art.xingzheai.cn/art/textbook?id=914',question:'原作中的黄色、褐色给你什么感受？只改变这些颜色的鲜灰，再比较。'},
+{id:'lesson-sunflowers',name:'向日葵 · 教材学生作品',src:'色彩实验室_assets/textbook-purity/sunflowers.png',medium:'textbook',regions:[['红色部分',[0,0,900,600],[450,300]],['粉紫色部分',[0,0,900,600],[450,300]]],lessonGroups:[['红色部分',345,25],['粉紫色部分',265,345]],source:'https://art.xingzheai.cn/art/textbook?id=914',question:'让红色部分鲜艳一点、粉紫色部分灰柔一点，画面的重点变了吗？'},
+{id:'lesson-elephant',name:'大象 · 教材学生作品',src:'色彩实验室_assets/textbook-purity/elephant.png',medium:'textbook',regions:[['蓝绿色部分',[0,0,900,600],[450,300]],['红粉色部分',[0,0,900,600],[450,300]],['紫色部分',[0,0,900,600],[450,300]]],lessonGroups:[['蓝绿色部分',75,245],['红粉色部分',325,30],['紫色部分',245,325]],source:'https://art.xingzheai.cn/art/textbook?id=914',question:'保持红粉色背景，改变蓝绿色部分的鲜灰。大象和背景的关系有什么变化？'},
+{id:'lesson-bull',name:'牛 · 教材示例',src:'色彩实验室_assets/textbook-purity/bull.png',medium:'textbook',regions:[['蓝绿色部分',[0,0,900,600],[450,300]],['橙黄色部分',[0,0,900,600],[450,300]]],lessonGroups:[['蓝绿色部分',70,260],['橙黄色部分',0,70]],source:'https://art.xingzheai.cn/art/textbook?id=914',question:'把蓝绿色和橙黄色调成不同的鲜灰关系，比较哪种搭配更符合你的想法。'}
+];
