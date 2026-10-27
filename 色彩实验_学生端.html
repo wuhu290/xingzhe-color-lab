@@ -238,7 +238,7 @@ else if(task.type==='landscape'){renderBeforeFreeRegions();const standard=$('#fi
 else if(task.type==='mountain'){renderBeforeValueUnit();$('#finish').onclick=()=>{if(!richAction){$('#mountain-tip').textContent='先画一道山线，再完成。';return}$('#finish').textContent='下一个任务 →';$('#finish').onclick=()=>{poolState.cleared++;runPool()}}}
 else if(task.type==='free'){selfRegions=true;renderBeforeMountain();$('#finish').onclick=()=>{if(!richAction){$('#free-tip').textContent='先画一块区域，再完成。';return}$('#finish').textContent='下一个任务 →';$('#finish').onclick=()=>{poolState.cleared++;runPool()}}}
 else poolChoice(task);
-$('#round').textContent=`随机任务 · ${task.name}`;$('#again').textContent='换一个任务 ↻';$('#again').onclick=runPool;const tag=document.createElement('span');tag.className='task-pool-label';tag.textContent=`任务池 ${poolTasks.length} 种`;$('#toy').append(tag);
+$('#round').textContent=`随机任务 · ${task.name}`;$('#again').textContent='换一个任务 ↻';$('#again').onclick=runPool;
 }
 const renderBeforePool=render;render=function(){renderBeforePool();if(mode==='light')runPool()};render();
 
