@@ -1,0 +1,693 @@
+{
+  "schemaVersion": 1,
+  "featureId": "color-lab",
+  "featureName": "色彩实验",
+  "updatedAt": "2026-11-06",
+  "pages": {
+    "mix": {
+      "pageId": "mix",
+      "title": "三原色1 · 画笔调色",
+      "targetRoles": [
+        "教师",
+        "学生"
+      ],
+      "businessGoal": "通过蘸色、涂开与叠加，观察原色调和及用量带来的变化。",
+      "coreWorkflow": [
+        "选择颜料并蘸色",
+        "点击拿起画笔，在调色区涂开",
+        "更换颜料继续混合，观察结果",
+        "自由探索或进入教师指定任务"
+      ],
+      "features": [
+        {
+          "id": "f1",
+          "number": 1,
+          "title": "色彩工具切换",
+          "description": "保留三原色1、三原色2两种表现形式。",
+          "selector": ".toolnav"
+        },
+        {
+          "id": "f2",
+          "number": 2,
+          "title": "颜料与蘸色",
+          "description": "选择红、黄、蓝颜料；加色动作与画纸混合过程分开呈现。",
+          "selector": ".pigments"
+        },
+        {
+          "id": "f3",
+          "number": 3,
+          "title": "画纸与画笔",
+          "description": "画笔初始固定；点击拿起后再移动，按住在画纸上涂开。",
+          "selector": "#paper"
+        },
+        {
+          "id": "f4",
+          "number": 4,
+          "title": "重新探索与完成",
+          "description": "重新探索清空本次过程；指定任务中完成后进入结果判断。",
+          "selector": "#finish"
+        }
+      ],
+      "keyRules": [
+        "红与黄、黄与蓝、红与蓝的调和用于观察间色。",
+        "自由调色没有唯一标准答案；指定目标任务按系统设置的接近程度判断。"
+      ],
+      "prototypeBoundaries": [
+        "当前为前端交互原型；未接入学校账号、班级服务与跨电脑同步。",
+        "屏幕混色与颜料混色存在差异，结果用于教学观察，不作为真实颜料配方。"
+      ]
+    },
+    "mix2": {
+      "pageId": "mix2",
+      "title": "三原色2 · 色块混合",
+      "targetRoles": [
+        "教师",
+        "学生"
+      ],
+      "businessGoal": "保留投入的原色色块，让学生同时看见配方和混合结果。",
+      "coreWorkflow": [
+        "点击颜料或将色块拖入圆形区",
+        "增减各原色份数，观察圆形区的结果",
+        "点击圆内色块或拖出，拿走一份",
+        "收藏配方，或进入目标色练习"
+      ],
+      "features": [
+        {
+          "id": "f1",
+          "number": 1,
+          "title": "原色操作区",
+          "description": "点击加一份；减号减少一份，份数可减至0，每色最多12份。",
+          "selector": "#md-sources"
+        },
+        {
+          "id": "f2",
+          "number": 2,
+          "title": "圆形混色区",
+          "description": "方形容器内套圆形有效区域；投入后保留原色色块及份数。",
+          "selector": "#md-well"
+        },
+        {
+          "id": "f3",
+          "number": 3,
+          "title": "配方与结果",
+          "description": "配方与混色结果同时更新，空配方不显示混色结果。",
+          "selector": "#md-preview"
+        },
+        {
+          "id": "f4",
+          "number": 4,
+          "title": "撤销与清空",
+          "description": "撤销上一步，或清空当前配方。",
+          "selector": "#md-undo"
+        },
+        {
+          "id": "f5",
+          "number": 5,
+          "title": "收藏配方",
+          "description": "最多保留5个当前实例配方，重复结果不重复收藏；点击配方可恢复。",
+          "selector": "#md-save"
+        },
+        {
+          "id": "f6",
+          "number": 6,
+          "title": "课堂练习",
+          "description": "6次目标色探索：先认识间色，再比较配比；答对后反馈并自动进入下一题。",
+          "selector": "#md-practice"
+        }
+      ],
+      "keyRules": [
+        "点击圆内原色色块或拖出圆形有效区，均减少一份。",
+        "目标色按接近程度判断，不要求逐像素完全一致；至少使用两种原色。",
+        "收藏属于当前工具实例；切换、重新渲染或刷新后可能清除，不是云端作品集。"
+      ],
+      "prototypeBoundaries": [
+        "当前为前端交互原型；未接入学校账号、班级服务与跨电脑同步。",
+        "屏幕混色与颜料混色存在差异，结果用于教学观察，不作为真实颜料配方。"
+      ]
+    },
+    "light": {
+      "pageId": "light",
+      "title": "明度1 · 画笔调色",
+      "targetRoles": [
+        "教师",
+        "学生"
+      ],
+      "businessGoal": "在同一种有色颜料中加入白色或黑色，直观观察明度变化。",
+      "coreWorkflow": [
+        "选择基础色",
+        "蘸白色或黑色，在调色区混合",
+        "比较增加不同用量后的深浅变化",
+        "保存结果或进入课堂练习"
+      ],
+      "features": [
+        {
+          "id": "f1",
+          "number": 1,
+          "title": "基础色",
+          "description": "从预设基础色中选择；更换基础色会重新开始。",
+          "selector": ".value-base-picker"
+        },
+        {
+          "id": "f2",
+          "number": 2,
+          "title": "明度混合区",
+          "description": "沿用画笔混色方式，观察加白变浅、加黑变深。",
+          "selector": "#paper"
+        },
+        {
+          "id": "f3",
+          "number": 3,
+          "title": "教材参考",
+          "description": "教材仅作观看与讲解参考，不提供区域换色。",
+          "selector": "#bl-reference"
+        },
+        {
+          "id": "f4",
+          "number": 4,
+          "title": "保存结果",
+          "description": "加入白或黑后可保存；自由探索下载图片，指定任务记录本地提交。",
+          "selector": "#value-mix-save"
+        },
+        {
+          "id": "f5",
+          "number": 5,
+          "title": "课堂练习",
+          "description": "随机打开明度任务，按辨认、比较、应用逐步练习。",
+          "selector": "#bl-practice"
+        }
+      ],
+      "keyRules": [
+        "更换基础色与调整明度是不同操作。",
+        "已取消自由画山线、自由绘画及教材区域调色。",
+        "创作任务保留作品供教师评价，不用统一答案评判审美。"
+      ],
+      "prototypeBoundaries": [
+        "当前为前端交互原型；未接入学校账号、班级服务与跨电脑同步。",
+        "屏幕混色与颜料混色存在差异，结果用于教学观察，不作为真实颜料配方。"
+      ]
+    },
+    "light2": {
+      "pageId": "light2",
+      "title": "明度2 · 色块混合",
+      "targetRoles": [
+        "教师",
+        "学生"
+      ],
+      "businessGoal": "用可增减的基础色、白色、黑色色块，比较同一颜色的深浅变化。",
+      "coreWorkflow": [
+        "选择基础色",
+        "加入白色或黑色色块",
+        "增减份数，比较原色与现在的颜色",
+        "收藏结果或进入课堂练习"
+      ],
+      "features": [
+        {
+          "id": "f1",
+          "number": 1,
+          "title": "基础色选择",
+          "description": "提供9种基础色；更换后重置配方和操作历史。",
+          "selector": "#md-base"
+        },
+        {
+          "id": "f2",
+          "number": 2,
+          "title": "颜料份数",
+          "description": "基础色、白色、黑色均可增减至0，每种最多12份。",
+          "selector": "#md-sources"
+        },
+        {
+          "id": "f3",
+          "number": 3,
+          "title": "圆形混色区",
+          "description": "保留投入的原始色块；点击色块或拖出可减少一份。",
+          "selector": "#md-well"
+        },
+        {
+          "id": "f4",
+          "number": 4,
+          "title": "原色与结果对照",
+          "description": "并列展示基础色和混合结果，辅助比较深浅。",
+          "selector": "#md-original"
+        },
+        {
+          "id": "f5",
+          "number": 5,
+          "title": "收藏",
+          "description": "保存非空配方；最多5个，仅保留在当前工具实例。",
+          "selector": "#md-save"
+        },
+        {
+          "id": "f6",
+          "number": 6,
+          "title": "课堂练习",
+          "description": "进入已有明度随机练习池。",
+          "selector": "#md-practice"
+        }
+      ],
+      "keyRules": [
+        "空配方不应被显示为有效调色结果。",
+        "仅白、仅黑、黑白混合分别呈现白、黑、灰。",
+        "自由调色没有唯一正确结果。"
+      ],
+      "prototypeBoundaries": [
+        "当前为前端交互原型；未接入学校账号、班级服务与跨电脑同步。",
+        "屏幕混色与颜料混色存在差异，结果用于教学观察，不作为真实颜料配方。"
+      ]
+    },
+    "hue": {
+      "pageId": "hue",
+      "title": "色相 · 换色观察台",
+      "targetRoles": [
+        "教师",
+        "学生"
+      ],
+      "businessGoal": "通过改变图中指定部分的色相，比较不同色彩倾向带来的画面感受。",
+      "coreWorkflow": [
+        "选择教材图片或内置插画",
+        "选中可调整的对象或区域",
+        "转动色环或拖动色相滑条",
+        "查看原图对比，保存或练习"
+      ],
+      "features": [
+        {
+          "id": "f1",
+          "number": 1,
+          "title": "图片选择",
+          "description": "选择教材或内置插画；刷新进入时默认显示作品原始配色。",
+          "selector": "#hs-scene"
+        },
+        {
+          "id": "f2",
+          "number": 2,
+          "title": "画面与区域",
+          "description": "图像使用预设区域，调整选中区域的色相并保留图像纹理。",
+          "selector": "#hs-art"
+        },
+        {
+          "id": "f3",
+          "number": 3,
+          "title": "色环",
+          "description": "选择色彩倾向；不是明度深浅调节。",
+          "selector": "#hs-ring"
+        },
+        {
+          "id": "f4",
+          "number": 4,
+          "title": "色相滑条",
+          "description": "与色环联动，连续观察换色结果。",
+          "selector": "#hs-slider"
+        },
+        {
+          "id": "f5",
+          "number": 5,
+          "title": "原图对比",
+          "description": "临时查看原图；对比期间停止色相调整。",
+          "selector": "#hs-original"
+        },
+        {
+          "id": "f6",
+          "number": 6,
+          "title": "课堂练习",
+          "description": "颜色家族等任务从易到难，按当前任务规则判断。",
+          "selector": "#hs-practice"
+        }
+      ],
+      "keyRules": [
+        "换色观察关注色相差异；不等同于真实颜料混色。",
+        "预设区域不是自动识别任意上传图片。",
+        "自由保存下载图片；教师指定任务保存本地结果。"
+      ],
+      "prototypeBoundaries": [
+        "目前只支持内置素材及既有预设区域。",
+        "当前为前端交互原型；未接入学校账号、班级服务与跨电脑同步。"
+      ]
+    },
+    "chroma": {
+      "pageId": "chroma",
+      "title": "纯度 · 鲜灰实验台",
+      "targetRoles": [
+        "教师",
+        "学生"
+      ],
+      "businessGoal": "比较画面局部鲜艳与灰柔的关系，观察主体和背景的协调变化。",
+      "coreWorkflow": [
+        "选择教材、名画或插画素材",
+        "选择预设区域，或明确选择整图",
+        "拖动鲜灰滑条观察变化",
+        "对照原图，保存方案或练习"
+      ],
+      "features": [
+        {
+          "id": "f1",
+          "number": 1,
+          "title": "素材选择",
+          "description": "教材、名画与插画作为观察素材，不据此自动评判作品优劣。",
+          "selector": "#lab-scene"
+        },
+        {
+          "id": "f2",
+          "number": 2,
+          "title": "区域选择",
+          "description": "点击图中对象或选择预设区域；整图是明确的可选范围。",
+          "selector": "#lab-scope"
+        },
+        {
+          "id": "f3",
+          "number": 3,
+          "title": "画面",
+          "description": "仅对选定范围应用调整；不使用画笔涂抹选区。",
+          "selector": "#purity-lab-canvas"
+        },
+        {
+          "id": "f4",
+          "number": 4,
+          "title": "纯度调节",
+          "description": "100为素材初始值，可向灰柔或鲜艳方向调整。",
+          "selector": "#lab-chroma"
+        },
+        {
+          "id": "f5",
+          "number": 5,
+          "title": "对比与重置",
+          "description": "对比原图或恢复当前素材的初始状态。",
+          "selector": "#lab-compare"
+        },
+        {
+          "id": "f6",
+          "number": 6,
+          "title": "保存与练习",
+          "description": "保存本地方案；课堂练习直接打开任务，不再先选游戏。",
+          "selector": "#lab-practice"
+        }
+      ],
+      "keyRules": [
+        "纯度指色彩的鲜艳程度，不是明暗程度。",
+        "局部调节使用预先配置的范围，不支持任意圈选。",
+        "自由调整保留观察与表达空间，不设唯一正确配色。"
+      ],
+      "prototypeBoundaries": [
+        "本版不支持教师上传图片后自动分区。",
+        "本地方案不跨浏览器、站点或设备同步。"
+      ]
+    },
+    "analog": {
+      "pageId": "analog",
+      "title": "相近色 · 配色工坊",
+      "targetRoles": [
+        "教师",
+        "学生"
+      ],
+      "businessGoal": "借助色环与图案配色，观察相邻色相组合的协调与变化。",
+      "coreWorkflow": [
+        "选择图案主题与主色",
+        "观察色环上相邻色的位置",
+        "选中图案区域，再选颜色替换",
+        "保存配色，或进入课堂练习"
+      ],
+      "features": [
+        {
+          "id": "f1",
+          "number": 1,
+          "title": "图案主题",
+          "description": "花叶织物、游鱼花布、几何窗格等内置主题。",
+          "selector": "#pl-theme"
+        },
+        {
+          "id": "f2",
+          "number": 2,
+          "title": "邻近色环",
+          "description": "围绕主色提供色环上前后相邻的颜色。",
+          "selector": "#pl-wheel"
+        },
+        {
+          "id": "f3",
+          "number": 3,
+          "title": "区域配色",
+          "description": "先选择图案区域，再选择可用配色。",
+          "selector": "#pl-picture"
+        },
+        {
+          "id": "f4",
+          "number": 4,
+          "title": "颜色选择",
+          "description": "把相近色应用到选中部分，观察同一组颜色的不同组合。",
+          "selector": "#pl-choices"
+        },
+        {
+          "id": "f5",
+          "number": 5,
+          "title": "教材参考",
+          "description": "观看教材内容，不提供教材图片区域调色。",
+          "selector": "#pl-reference"
+        },
+        {
+          "id": "f6",
+          "number": 6,
+          "title": "练习与保存",
+          "description": "旅行、串色等多种练习；自由保存作品，指定任务记录操作与结果。",
+          "selector": "#pl-practice"
+        }
+      ],
+      "keyRules": [
+        "相近色关注色环上较接近的色相关系，不以颜色深浅是否相似为唯一标准。",
+        "练习与自由配色分别判断；自由作品不自动打审美分。"
+      ],
+      "prototypeBoundaries": [
+        "当前为前端交互原型；未接入学校账号、班级服务与跨电脑同步。",
+        "内置图案可分区配色，不支持任意上传图像自动分区。"
+      ]
+    },
+    "contrast": {
+      "pageId": "contrast",
+      "title": "对比色 · 衬色观察台",
+      "targetRoles": [
+        "教师",
+        "学生"
+      ],
+      "businessGoal": "固定主体，切换背景，直接比较色彩对比对醒目程度和画面感受的影响。",
+      "coreWorkflow": [
+        "选择图案与对比色组",
+        "依次切换同色、邻近色、对比色背景",
+        "比较同一主体在不同背景上的变化",
+        "交换主客色继续观察，或进入课堂练习"
+      ],
+      "features": [
+        {
+          "id": "f1",
+          "number": 1,
+          "title": "图案主题",
+          "description": "叶子、花朵、几何等图案用于控制观察对象。",
+          "selector": "#pl-theme"
+        },
+        {
+          "id": "f2",
+          "number": 2,
+          "title": "对比色组",
+          "description": "提供红绿、橙蓝、黄紫等对比关系。",
+          "selector": "#pl-pair"
+        },
+        {
+          "id": "f3",
+          "number": 3,
+          "title": "画面对照",
+          "description": "保持主体位置、大小等条件，主要改变背景颜色。",
+          "selector": "#pl-picture"
+        },
+        {
+          "id": "f4",
+          "number": 4,
+          "title": "背景切换",
+          "description": "切换同色、邻近色、对比色背景，比较主体显著程度。",
+          "selector": "[data-pl-bg]"
+        },
+        {
+          "id": "f5",
+          "number": 5,
+          "title": "主客色互换",
+          "description": "交换主体与背景的颜色角色，继续比较。",
+          "selector": "#pl-flip"
+        },
+        {
+          "id": "f6",
+          "number": 6,
+          "title": "课堂练习",
+          "description": "找风筝等任务；答案位置打乱，正确后有反馈，不强制再换背景。",
+          "selector": "#pl-practice"
+        }
+      ],
+      "keyRules": [
+        "观察背景变化时固定主体，避免把面积、位置的变化混入结论。",
+        "对比强烈不代表作品一定更好，是否适合取决于表达目的。",
+        "已去掉“画面点睛”练习。"
+      ],
+      "prototypeBoundaries": [
+        "当前为前端交互原型；未接入学校账号、班级服务与跨电脑同步。",
+        "视觉感受与显示设备、背景条件有关；此处不作为视力或色觉诊断。"
+      ]
+    },
+    "practice": {
+      "pageId": "practice",
+      "title": "课堂练习 · 随机任务",
+      "targetRoles": [
+        "教师",
+        "学生"
+      ],
+      "businessGoal": "围绕当前色彩概念开展辨认、比较与应用，将操作体验转化为可观察的学习结果。",
+      "coreWorkflow": [
+        "进入当前工具的课堂练习",
+        "阅读当前简短任务提示",
+        "操作或选择答案",
+        "正确后看反馈并自动继续；选错则留在当前题再试"
+      ],
+      "features": [
+        {
+          "id": "f1",
+          "number": 1,
+          "title": "当前任务",
+          "description": "按当前工具和任务类型展示题面、素材及选项。",
+          "selector": "#toy"
+        },
+        {
+          "id": "f2",
+          "number": 2,
+          "title": "工具切换",
+          "description": "退出当前练习或切换色彩概念。",
+          "selector": ".toolnav"
+        },
+        {
+          "id": "f3",
+          "number": 3,
+          "title": "知识讲解",
+          "description": "可重新打开标准色彩知识说明。",
+          "selector": "#color-knowledge-entry"
+        }
+      ],
+      "keyRules": [
+        "有标准答案的任务才判断对错；开放创作提交作品供评价。",
+        "错选显示鼓励反馈，保留当前题；正确后展示成功反馈并在支持的任务中自动继续。",
+        "随机素材与题型尽量轮换，不承诺无限不重复。",
+        "教师任务依照设定题数递进；自由练习与教师任务的进度分别处理。"
+      ],
+      "prototypeBoundaries": [
+        "本原型不是完整测评系统，不提供学期成绩或诊断结论。",
+        "当前为前端交互原型；未接入学校账号、班级服务与跨电脑同步。"
+      ]
+    },
+    "teacher": {
+      "pageId": "teacher",
+      "title": "教师端 · 布置任务",
+      "targetRoles": [
+        "教师"
+      ],
+      "businessGoal": "围绕当前色彩概念设置递进练习，并预览学生完成过程。",
+      "coreWorkflow": [
+        "选择工具并打开布置任务",
+        "选择玩法、难度、3道或6道题及可用素材设置",
+        "开始任务，进入本浏览器的学生体验",
+        "完成后查看反馈或暂存退出"
+      ],
+      "features": [
+        {
+          "id": "f1",
+          "number": 1,
+          "title": "教师 / 学生体验",
+          "description": "切换教师操作与学生体验视角。",
+          "selector": "#role"
+        },
+        {
+          "id": "f2",
+          "number": 2,
+          "title": "布置任务入口",
+          "description": "按当前工具显示可布置的玩法与参数。",
+          "selector": "#assign-entry"
+        },
+        {
+          "id": "f3",
+          "number": 3,
+          "title": "玩法设置",
+          "description": "指定玩法或递进任务组；可选项随工具变化。",
+          "selector": "#assign-play"
+        },
+        {
+          "id": "f4",
+          "number": 4,
+          "title": "题数设置",
+          "description": "3道或6道；分别覆盖认识、比较、应用阶段。",
+          "selector": "#assign-rounds"
+        },
+        {
+          "id": "f5",
+          "number": 5,
+          "title": "开始任务",
+          "description": "生成本地任务并预览学生完成过程，不会推送至真实学生电脑。",
+          "selector": "#assign-launch"
+        }
+      ],
+      "keyRules": [
+        "三原色目标色为当前内置预设，不是任意输入颜色。",
+        "3道任务各覆盖一个阶段，6道任务每阶段两道；素材轮换依任务支持情况生效。",
+        "尚未连接真实班级与在线学生名单。"
+      ],
+      "prototypeBoundaries": [
+        "这里演示“布置—完成—反馈”流程，不包含真实课堂推送、通知或账号权限。",
+        "任务链接引用本地任务标识；转发给另一台电脑不会自动带走任务内容。"
+      ]
+    },
+    "feedback": {
+      "pageId": "feedback",
+      "title": "教师端 · 任务反馈",
+      "targetRoles": [
+        "教师",
+        "学生"
+      ],
+      "businessGoal": "区分作答结果、错误尝试与开放作品，帮助教师了解本次任务完成情况。",
+      "coreWorkflow": [
+        "学生逐题完成并自动继续",
+        "查看已完成数量、正确与错误尝试",
+        "查看开放作品及待评价状态",
+        "教师查看本地记录，或导出反馈"
+      ],
+      "features": [
+        {
+          "id": "f1",
+          "number": 1,
+          "title": "任务进度",
+          "description": "显示当前题序、总题数与错误尝试；支持暂存退出。",
+          "selector": "#assign-banner"
+        },
+        {
+          "id": "f2",
+          "number": 2,
+          "title": "反馈面板",
+          "description": "汇总任务完成情况与作品记录。",
+          "selector": ".assignment-sheet"
+        },
+        {
+          "id": "f3",
+          "number": 3,
+          "title": "导出反馈",
+          "description": "下载本地反馈，便于教师留档。",
+          "selector": "#as-export"
+        },
+        {
+          "id": "f4",
+          "number": 4,
+          "title": "任务记录",
+          "description": "查看当前浏览器本地记录，按已有入口继续任务。",
+          "selector": "#assign-records"
+        }
+      ],
+      "keyRules": [
+        "“错误尝试”可以包含同一题多次错误，不等于做错的题数。",
+        "首次正确指该题未发生错误尝试。",
+        "开放创作不自动标为正确或错误，保留作品并等待教师评价。",
+        "保存失败应提示重试，不能把未保存显示成已完成。"
+      ],
+      "prototypeBoundaries": [
+        "反馈保存在本浏览器同一站点，本版未接入教师服务端。",
+        "两个公开网址的本地记录独立；清理浏览器数据可能丢失记录。",
+        "图片记录与结构化反馈使用不同浏览器存储；下载文件才是可转交的副本。"
+      ]
+    }
+  }
+}
