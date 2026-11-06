@@ -1,6 +1,6 @@
 /* Contextual review documentation. Does not change gameplay or assignment data. */
 (()=>{'use strict';
-const assetRoot=new URL('.',document.currentScript.src), STORE='color-lab-guide-edits-v1';
+const assetRoot=new URL('.',document.currentScript.src), STORE='color-lab-guide-edits-v2';
 let original,config,pageKey='mix',opened=false,editing=false,markers=false,pinned=false,focusReturn,updateTimer;
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const button=document.createElement('button');button.id='pg-trigger';button.textContent='原型说明';button.title='查看当前工具的操作规则与原型边界';button.setAttribute('aria-haspopup','dialog');button.setAttribute('aria-expanded','false');
@@ -45,5 +45,5 @@ layer.addEventListener('keydown',e=>{if(e.key==='Escape'){e.stopPropagation();se
 function refresh(){clearTimeout(updateTimer);updateTimer=setTimeout(()=>{if(!config||pinned)return;const key=current();if(key!==pageKey){pageKey=key;editing=false;if(opened)render();else paintBadges()}else if(markers)paintBadges()},180)}
 const observer=new MutationObserver(m=>{if(m.some(x=>!x.target.closest?.('#pg-layer,#pg-badges,#pg-trigger')))refresh()});observer.observe(document.body,{childList:true,subtree:true});
 addEventListener('scroll',()=>{if(markers)paintBadges()},true);addEventListener('resize',paintBadges);
-fetch(new URL('prototype-guide.json?v=66',assetRoot)).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(data=>{original=data;config=structuredClone(data);try{const saved=JSON.parse(sessionStorage.getItem(STORE)||'null');if(saved?.schemaVersion===1&&saved.pages?.mix2)config=saved}catch{}pageKey=current();button.disabled=false}).catch(()=>{button.textContent='说明加载失败 · 重试';button.onclick=()=>location.reload()});button.disabled=true;
+fetch(new URL('prototype-guide.json?v=67',assetRoot)).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(data=>{original=data;config=structuredClone(data);try{const saved=JSON.parse(sessionStorage.getItem(STORE)||'null');if(saved?.schemaVersion===1&&saved.pages?.mix2)config=saved}catch{}pageKey=current();button.disabled=false}).catch(()=>{button.textContent='说明加载失败 · 重试';button.onclick=()=>location.reload()});button.disabled=true;
 })();

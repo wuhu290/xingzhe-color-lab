@@ -157,20 +157,13 @@
         {
           "id": "f3",
           "number": 3,
-          "title": "教材参考",
-          "description": "教材仅作观看与讲解参考，不提供区域换色。",
-          "selector": "#bl-reference"
-        },
-        {
-          "id": "f4",
-          "number": 4,
           "title": "保存结果",
           "description": "加入白或黑后可保存；自由探索下载图片，指定任务记录本地提交。",
           "selector": "#value-mix-save"
         },
         {
-          "id": "f5",
-          "number": 5,
+          "id": "f4",
+          "number": 4,
           "title": "课堂练习",
           "description": "随机打开明度任务，按辨认、比较、应用逐步练习。",
           "selector": "#bl-practice"
@@ -178,7 +171,7 @@
       ],
       "keyRules": [
         "更换基础色与调整明度是不同操作。",
-        "已取消自由画山线、自由绘画及教材区域调色。",
+        "已取消自由画山线、自由绘画、教材区域调色及教材参考入口。",
         "创作任务保留作品供教师评价，不用统一答案评判审美。"
       ],
       "prototypeBoundaries": [
